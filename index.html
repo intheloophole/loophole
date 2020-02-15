@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - snowing cats and dogs</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><centre><div id="mc_embed_signup">
+<form action="https://lol.us4.list-manage.com/subscribe/post?u=db8aa828b6456cd1ea0dd5522&amp;id=7635b9aa10" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_db8aa828b6456cd1ea0dd5522_7635b9aa10" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="sign up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+  
+<css-doodle>
+  :doodle {
+    @grid:5 / 100%;
+    width:100vw;
+    height:100vh;
+  }
+  /*snowing cats and dogs*/
+  :after {
+    content:@p(➰);
+  }
+   /*and some barnyard friends*/
+  @random(.1) {
+     :after {
+      content:@p(loophole);
+      }
+  }
+
+  font-size:@p(3vmin, 4vmin, 1.75em);
+  text-shadow:0.2px 0px black;
+  animation: snow @r(8s, 25s) infinite linear;
+  @random(.3) { animation: snow @r(15s, 30s) infinite linear;
+    font-size:@p(2vmin, 3vmin, 1.5em);
+  }
+  @random(.05) { animation: snow @r(12s, 17s) infinite linear;
+    font-size:@p(1em,1vmin);
+  }
+  will-change:transform;
+  @keyframes snow {
+    0% {
+      transform: translateY(-200vh) translateX(@r(-10px, 10px));
+    }
+    100% {
+      transform:translateY(100vh) translateX(calc(.1*@index()*@p(-2vmin,2vmin))) rotate(@r(-720deg, 720deg)); 
+    }
+  }
+</css-doodle>
+<!-- partial -->
+  <script src='https://unpkg.com/css-doodle@0.7.2/css-doodle.min.js'></script>
+</body>
+</html>
